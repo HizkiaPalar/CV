@@ -1,32 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Home from "./components/home";
 import Navbar from "./components/navbar";
 
 function App() {
   return (
     <div>
       <Navbar/>
-      <div
-        id="home"
-        className="intro route bg-image"
-        style={{ backgroundImage: "url(img/intro-bg.jpg)" }}
-      >
-        <div className="overlay-itro" />
-        <div className="intro-content display-table">
-          <div className="table-cell">
-            <div className="container">
-              <h1 className="intro-title mb-4">I am Morgan Freeman</h1>
-              <p className="intro-subtitle">
-                <span className="text-slider-items">
-                  CEO DevFolio,Web Developer,Web Designer,Frontend
-                  Developer,Graphic Designer
-                </span>
-                <strong className="text-slider" />
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Home/>
       <section id="about" className="about-mf sect-pt4 route">
         <div className="container">
           <div className="row">
