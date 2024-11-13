@@ -40,7 +40,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link js-scroll" href="#service">
-                Services
+                Interest
               </a>
             </li>
             <li className="nav-item">

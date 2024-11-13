@@ -15,25 +15,27 @@ const Footer = () => {
                 <div className="row justify-content-center">
                   <div className="col-md-6">
                     <div className="title-box-2 pt-4 pt-md-0">
-                      <h5 className="title-left">Get in Touch</h5>
+                      <h5 className="title-left">Get in touch</h5>
                     </div>
                     <div className="more-info">
                       <p className="lead">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Facilis dolorum dolorem soluta quidem expedita aperiam
-                        aliquid at. Totam magni ipsum suscipit amet? Autem nemo
-                        esse laboriosam ratione nobis mollitia inventore?
+                        Thank you for visiting my portfolio! If you’re
+                        interested in working together, have questions, or just
+                        want to say hello, please feel free to reach out. I'm
+                        open to new projects, collaborations, or discussions
+                        about my work.
                       </p>
                       <ul className="list-ico">
                         <li>
-                          <span className="ion-ios-location" /> 329 WASHINGTON
-                          ST BOSTON, MA 02108
+                          <span className="ion-ios-location" /> Airmadidi,
+                          Minahasa Utara, Sulawesi Utara
                         </li>
                         <li>
-                          <span className="ion-ios-telephone" /> (617) 557-0089
+                          <span className="ion-ios-telephone" /> 085255069945
                         </li>
                         <li>
-                          <span className="ion-email" /> contact@example.com
+                          <span className="ion-email" />{" "}
+                          Hizkiapalar294@gmail.com
                         </li>
                       </ul>
                     </div>
@@ -45,13 +47,6 @@ const Footer = () => {
                         <li>
                           <a href>
                             <span className="ico-circle">
-                              <i className="ion-social-facebook" />
-                            </span>
-                          </a>
-                        </li>
-                        <li>
-                          <a href>
-                            <span className="ico-circle">
                               <i className="ion-social-instagram" />
                             </span>
                           </a>
@@ -59,14 +54,14 @@ const Footer = () => {
                         <li>
                           <a href>
                             <span className="ico-circle">
-                              <i className="ion-social-twitter" />
+                              <i className="ion-social-linkedin" />
                             </span>
                           </a>
                         </li>
                         <li>
                           <a href>
                             <span className="ico-circle">
-                              <i className="ion-social-pinterest" />
+                              <i className="ion-social-github" />
                             </span>
                           </a>
                         </li>

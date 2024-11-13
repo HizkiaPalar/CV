@@ -37,7 +37,7 @@ const About = () => {
                     </div>
                   </div>
                   <div className="skill-mf">
-                    <p className="title-s">Skill</p>
+                    <p className="title-s">Programming Language</p>
                     <span>HTML</span> <span className="pull-right">70%</span>
                     <div className="progress">
                       <div
