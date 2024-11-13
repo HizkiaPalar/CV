@@ -8,14 +8,13 @@ const Home = () => {
       style={{ backgroundImage: "url(img/intro-bg.jpg)" }}
     >
       <div className="overlay-itro" />
-      <div className="intro-content display-table">
+      <div className="intro-content display-table fade-in">
         <div className="table-cell">
           <div className="container">
-            <h1 className="intro-title mb-4">I am Morgan Freeman</h1>
+            <h1 className="intro-title mb-4">I am Hizkia Jonathan Palar</h1>
             <p className="intro-subtitle">
               <span className="text-slider-items">
-                CEO DevFolio,Web Developer,Web Designer,Frontend
-                Developer,Graphic Designer
+                I'm interested in front-end Web Development
               </span>
               <strong className="text-slider" />
             </p>
