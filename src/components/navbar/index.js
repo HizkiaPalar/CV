@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
 
 const Navbar = () => {
+  const [navbar, setNavbar] = useState({});
+  useEffect(() => {
+    const db = getDatabase();
+    const navbarRef = ref(db, "navbar");
+    onValue(navbarRef, (snapshot) => {
+      const data = snapshot.val();
+      setNavbar(data);
+    });
+  }, []);
   const [activeSection, setActiveSection] = useState("home");
 
   // Mengamati bagian yang terlihat untuk menetapkan bagian aktif
@@ -40,7 +50,7 @@ const Navbar = () => {
     >
       <div className="container">
         <a className="navbar-brand js-scroll" href="#page-top">
-          HizFolio
+          {navbar.nav1}
         </a>
         <button
           className="navbar-toggler collapsed"
@@ -68,7 +78,7 @@ const Navbar = () => {
                 href="#home"
                 onClick={() => handleNavClick("home")}
               >
-                Home
+                {navbar.nav2}
               </a>
             </li>
             <li className="nav-item">
@@ -79,7 +89,7 @@ const Navbar = () => {
                 href="#about"
                 onClick={() => handleNavClick("about")}
               >
-                About
+                {navbar.nav3}
               </a>
             </li>
             <li className="nav-item">
@@ -90,7 +100,7 @@ const Navbar = () => {
                 href="#service"
                 onClick={() => handleNavClick("service")}
               >
-                Interest
+                {navbar.nav4}
               </a>
             </li>
             <li className="nav-item">
@@ -101,7 +111,7 @@ const Navbar = () => {
                 href="#work"
                 onClick={() => handleNavClick("work")}
               >
-                Portfolio
+                {navbar.nav5}
               </a>
             </li>
             <li className="nav-item">
@@ -112,7 +122,7 @@ const Navbar = () => {
                 href="#contact"
                 onClick={() => handleNavClick("contact")}
               >
-                Contact
+                {navbar.nav6}
               </a>
             </li>
           </ul>

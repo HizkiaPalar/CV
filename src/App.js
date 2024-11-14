@@ -7,6 +7,7 @@ import About from "./components/section/about";
 import Footer from "./components/section/footer";
 import Interest from "./components/section/interest";
 import Portfolio from "./components/section/portfolio";
+import BgHome from "./assets/img/BgHome.jpg";
 
 function App() {
   useEffect(() => {
@@ -19,7 +20,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Home />
+      <Home backgroundImage={BgHome} />
       <div data-aos="fade-right">
         <About />
       </div>

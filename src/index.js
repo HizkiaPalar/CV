@@ -5,7 +5,8 @@ import App from "./App";
 import "./assets/js/main";
 import reportWebVitals from "./reportWebVitals";
 import "../src/assets/ionicons/css/ionicons.css";
-import 'animate.css';
+import "animate.css";
+import "./config/Firebase";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -10,6 +10,7 @@
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "counterup2": "^2.0.2",
+    "firebase": "^11.0.2",
     "ionicons": "^7.4.0",
     "jquery": "^3.7.1",
     "lightbox2": "^2.11.5",

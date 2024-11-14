@@ -749,6 +749,14 @@ a:hover {
   margin-bottom: 2rem;
 }
 
+.about-img img {
+  width: 150px; /* Adjust as needed for desired width */
+  height: 200px; /* Maintain 2:3 ratio */
+  object-fit: cover; /* Ensures image doesn't stretch */
+  border-radius: 5px; /* Optional: adds a rounded edge */
+}
+
+
 .about-mf .about-img img {
   margin-left: 10px;
 }

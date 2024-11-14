@@ -33,11 +33,6 @@ const Portfolio = () => {
                         <span className="w-date">4 Aug. 2024</span>
                       </div>
                     </div>
-                    <div className="col-sm-4">
-                      <div className="w-like">
-                        <span className="ion-ios-plus-outline" />
-                      </div>
-                    </div>
                   </div>
                 </div>
               </a>
@@ -58,11 +53,6 @@ const Portfolio = () => {
                         <span className="w-date">4 Aug. 2024</span>
                       </div>
                     </div>
-                    <div className="col-sm-4">
-                      <div className="w-like">
-                        <span className="ion-ios-plus-outline" />
-                      </div>
-                    </div>
                   </div>
                 </div>
               </a>
@@ -81,11 +71,6 @@ const Portfolio = () => {
                       <div className="w-more">
                         <span className="w-ctegory">PROXOCORIS</span> /{" "}
                         <span className="w-date">18 Sep. 2018</span>
-                      </div>
-                    </div>
-                    <div className="col-sm-4">
-                      <div className="w-like">
-                        <span className="ion-ios-plus-outline" />
                       </div>
                     </div>
                   </div>

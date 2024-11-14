@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import CountUp from "react-countup";
-import Testimonial2 from "../../../assets/img/testimonial-2.jpg";
+import Kia from "../../../assets/img/IMG_1847.jpg";
 
 const About = () => {
   const [htmlProgress, setHtmlProgress] = useState(0);
@@ -51,7 +51,7 @@ const About = () => {
                   <div className="row">
                     <div className="col-sm-6 col-md-5">
                       <div className="about-img">
-                        <img src={Testimonial2} alt="Testimonial" />
+                        <img src={Kia} />
                       </div>
                     </div>
                     <div className="col-sm-6 col-md-7">
