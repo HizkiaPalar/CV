@@ -8,9 +8,7 @@ const Interest = () => {
           <div className="col-sm-12">
             <div className="title-box text-center">
               <h3 className="title-a">Soft Skills</h3>
-              <p className="subtitle-a">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              </p>
+              
               <div className="line-mf" />
             </div>
           </div>

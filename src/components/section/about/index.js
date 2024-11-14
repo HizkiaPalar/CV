@@ -1,14 +1,25 @@
 import React, { useEffect, useState, useRef } from "react";
 import CountUp from "react-countup";
 import Kia from "../../../assets/img/IMG_1847.jpg";
+import { getDatabase, ref, onValue } from "firebase/database";
 
 const About = () => {
+  const [about, setAbout] = useState({});
   const [htmlProgress, setHtmlProgress] = useState(0);
   const [cssProgress, setCssProgress] = useState(0);
   const [jsProgress, setJsProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false); // State untuk kontrol visibilitas
   const aboutRef = useRef(null); // Referensi untuk section About
   const animationDuration = 3; // Durasi animasi dalam detik
+
+  useEffect(() => {
+    const db = getDatabase();
+    const aboutRef = ref(db, "about");
+    onValue(aboutRef, (snapshot) => {
+      const data = snapshot.val();
+      setAbout(data);
+    });
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -58,19 +69,19 @@ const About = () => {
                       <div className="about-info">
                         <p>
                           <span className="title-s">Name: </span>{" "}
-                          <span>Hizkia Palar</span>
+                          <span>{about.name}</span>
                         </p>
                         <p>
                           <span className="title-s">Profile: </span>{" "}
-                          <span>Student</span>
+                          <span>{about.profile}</span>
                         </p>
                         <p>
                           <span className="title-s">Email: </span>{" "}
-                          <span>Hizkiapalar294@gmail.com</span>
+                          <span>{about.email}</span>
                         </p>
                         <p>
                           <span className="title-s">Phone: </span>{" "}
-                          <span>085255069945</span>
+                          <span>{about.phone}</span>
                         </p>
                       </div>
                     </div>
@@ -79,7 +90,7 @@ const About = () => {
                     <p className="title-s">Programming Language</p>
 
                     {/* HTML Skill */}
-                    <span>HTML </span>
+                    <span>{about.lang1} </span>
                     <span className="pull-right">
                       {isVisible && (
                         <CountUp end={70} duration={animationDuration} />
@@ -101,7 +112,7 @@ const About = () => {
                     </div>
 
                     {/* CSS Skill */}
-                    <span>CSS </span>
+                    <span>{about.lang2} </span>
                     <span className="pull-right">
                       {isVisible && (
                         <CountUp end={60} duration={animationDuration} />
@@ -123,7 +134,7 @@ const About = () => {
                     </div>
 
                     {/* JavaScript Skill */}
-                    <span>JAVASCRIPT </span>
+                    <span>{about.lang3} </span>
                     <span className="pull-right">
                       {isVisible && (
                         <CountUp end={40} duration={animationDuration} />
@@ -151,12 +162,7 @@ const About = () => {
                       <h5 className="title-left">About me</h5>
                     </div>
                     <p className="lead">
-                      Hello! My name is Hizkia Palar, and I’m a student at
-                      Universitas Klabat, Faculty of Computer Science, majoring
-                      in Information Systems. I have a strong interest in web
-                      development, especially in front-end design. Currently,
-                      I’m focused on developing my skills in creating engaging
-                      and intuitive user interfaces and experiences.
+                      {about.desc}
                     </p>
                   </div>
                 </div>

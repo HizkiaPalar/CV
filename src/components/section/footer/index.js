@@ -1,6 +1,17 @@
-import React from "react";
 
+import React, { useEffect, useState } from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
 const Footer = () => {
+  const [footer, setFooter] = useState({});
+  useEffect(() => {
+    const db = getDatabase();
+    const footerRef = ref(db, "footer");
+    onValue(footerRef, (snapshot) => {
+      const data = snapshot.val();
+      setFooter(data);
+    });
+  }, []);
+
   return (
     <section
       className="paralax-mf footer-paralax bg-image sect-mt4 route"
@@ -19,23 +30,18 @@ const Footer = () => {
                     </div>
                     <div className="more-info">
                       <p className="lead">
-                        Thank you for visiting my portfolio! If you’re
-                        interested in working together, have questions, or just
-                        want to say hello, please feel free to reach out. I'm
-                        open to new projects, collaborations, or discussions
-                        about my work.
+                        {footer.ty}
                       </p>
                       <ul className="list-ico">
                         <li>
-                          <span className="ion-ios-location" /> Airmadidi,
-                          Minahasa Utara, Sulawesi Utara
+                          <span className="ion-ios-location" /> {footer.location}
                         </li>
                         <li>
-                          <span className="ion-ios-telephone" /> 085255069945
+                          <span className="ion-ios-telephone" /> {footer.phone}
                         </li>
                         <li>
                           <span className="ion-email" />{" "}
-                          Hizkiapalar294@gmail.com
+                          {footer.email}
                         </li>
                       </ul>
                     </div>
@@ -80,11 +86,10 @@ const Footer = () => {
             <div className="col-sm-12">
               <div className="copyright-box text-center">
                 <p className="copyright">
-                  © Copyright <strong>DevFolio</strong>. All Rights Reserved
+                  © Copyright <strong>HizFOlio</strong>. All Rights Reserved
                 </p>
                 <div className="credits">
-                  Designed by{" "}
-                  <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                  Designed by <a href="https://bootstrap.com/">Hizkia Palar</a>
                 </div>
               </div>
             </div>
