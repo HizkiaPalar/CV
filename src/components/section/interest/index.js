@@ -1,13 +1,13 @@
 import React from "react";
 
-const Service = () => {
+const Interest = () => {
   return (
     <section id="service" className="services-mf route">
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
             <div className="title-box text-center">
-              <h3 className="title-a">interest</h3>
+              <h3 className="title-a">Soft Skills</h3>
               <p className="subtitle-a">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               </p>
@@ -74,4 +74,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default Interest;

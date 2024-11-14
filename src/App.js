@@ -5,8 +5,8 @@ import Home from "./components/home";
 import Navbar from "./components/navbar";
 import About from "./components/section/about";
 import Footer from "./components/section/footer";
-import Service from "./components/section/service";
-import Work from "./components/section/work";
+import Interest from "./components/section/interest";
+import Portfolio from "./components/section/portfolio";
 
 function App() {
   useEffect(() => {
@@ -24,10 +24,10 @@ function App() {
         <About />
       </div>
       <div data-aos="fade-left">
-        <Service />
+        <Interest />
       </div>
       <div data-aos="fade-right">
-        <Work />
+        <Portfolio />
       </div>
       <div data-aos="fade-up">
         <Footer />

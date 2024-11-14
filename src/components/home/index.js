@@ -14,7 +14,7 @@ const Home = () => {
             <h1 className="intro-title mb-4">I am Hizkia Jonathan Palar</h1>
             <p className="intro-subtitle">
               <span className="text-slider-items">
-                I'm interested in front-end Web Development
+                I'm interested in Front-End Development
               </span>
               <strong className="text-slider" />
             </p>

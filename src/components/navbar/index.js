@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
+  const [activeSection, setActiveSection] = useState("home");
+
+  // Mengamati bagian yang terlihat untuk menetapkan bagian aktif
+  useEffect(() => {
+    const sections = ["home", "about", "service", "work", "contact"];
+    const options = { threshold: 0.3 };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id); // Update active section saat scroll
+        }
+      });
+    }, options);
+
+    sections.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Fungsi untuk menangani klik navbar dan scroll ke bagian yang sesuai
+  const handleNavClick = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" }); // Scroll dengan efek smooth
+      setActiveSection(sectionId); // Update active section saat navbar diklik
+    }
+  };
+
   return (
     <nav
       className="navbar navbar-b navbar-trans navbar-expand-md fixed-top"
@@ -8,7 +40,7 @@ const Navbar = () => {
     >
       <div className="container">
         <a className="navbar-brand js-scroll" href="#page-top">
-          DevFolio
+          HizFolio
         </a>
         <button
           className="navbar-toggler collapsed"
@@ -29,28 +61,57 @@ const Navbar = () => {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link js-scroll active" href="#home">
+              <a
+                className={`nav-link js-scroll ${
+                  activeSection === "home" ? "active" : ""
+                }`}
+                href="#home"
+                onClick={() => handleNavClick("home")}
+              >
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll" href="#about">
+              <a
+                className={`nav-link js-scroll ${
+                  activeSection === "about" ? "active" : ""
+                }`}
+                href="#about"
+                onClick={() => handleNavClick("about")}
+              >
                 About
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll" href="#service">
+              <a
+                className={`nav-link js-scroll ${
+                  activeSection === "service" ? "active" : ""
+                }`}
+                href="#service"
+                onClick={() => handleNavClick("service")}
+              >
                 Interest
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link js-scroll" href="#work">
-                certificate
+              <a
+                className={`nav-link js-scroll ${
+                  activeSection === "work" ? "active" : ""
+                }`}
+                href="#work"
+                onClick={() => handleNavClick("work")}
+              >
+                Portfolio
               </a>
             </li>
-
             <li className="nav-item">
-              <a className="nav-link js-scroll" href="#contact">
+              <a
+                className={`nav-link js-scroll ${
+                  activeSection === "contact" ? "active" : ""
+                }`}
+                href="#contact"
+                onClick={() => handleNavClick("contact")}
+              >
                 Contact
               </a>
             </li>
