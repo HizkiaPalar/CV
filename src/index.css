@@ -36675,3 +36675,17 @@ a.text-dark:hover {
   width: 100%;
   background-color: #bd2130; /* Warna underline */
 }
+
+.social-link {
+  color: black; /* Warna dasar hitam */
+  text-decoration: none; /* Hilangkan garis bawah */
+  transition: color 0.3s ease; /* Efek transisi warna */
+}
+
+.social-link:hover {
+  color: darkgray; /* Warna saat hover */
+}
+
+.ico-circle i {
+  font-size: 24px; /* Ukuran ikon */
+}
