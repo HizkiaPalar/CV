@@ -48,7 +48,7 @@ const Footer = () => {
                     <div className="socials">
                       <ul
                         className="d-flex justify-content-center"
-                        style={{ marginLeft: "18px" }} // Adjust margin as needed
+                        style={{ marginLeft: "18px" }} 
                       >
                         <li>
                           <a href>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import CountUp from "react-countup";
-import Kia from "../../../assets/img/IMG_1847.jpg";
 import { getDatabase, ref, onValue } from "firebase/database";
 
 const About = () => {
@@ -8,9 +7,9 @@ const About = () => {
   const [htmlProgress, setHtmlProgress] = useState(0);
   const [cssProgress, setCssProgress] = useState(0);
   const [jsProgress, setJsProgress] = useState(0);
-  const [isVisible, setIsVisible] = useState(false); // State untuk kontrol visibilitas
-  const aboutRef = useRef(null); // Referensi untuk section About
-  const animationDuration = 3; // Durasi animasi dalam detik
+  const [isVisible, setIsVisible] = useState(false); 
+  const aboutRef = useRef(null); 
+  const animationDuration = 3; 
 
   useEffect(() => {
     const db = getDatabase();
@@ -26,11 +25,11 @@ const About = () => {
       (entries) => {
         const entry = entries[0];
         if (entry.isIntersecting) {
-          setIsVisible(true); // Aktifkan animasi saat About terlihat
-          observer.disconnect(); // Hentikan observer setelah aktif sekali
+          setIsVisible(true); 
+          observer.disconnect(); 
         }
       },
-      { threshold: 0.2 } // Muncul animasi saat 30% dari elemen terlihat
+      { threshold: 0.2 } 
     );
 
     if (aboutRef.current) {
@@ -44,7 +43,7 @@ const About = () => {
 
   useEffect(() => {
     if (isVisible) {
-      // Animasi progress bar untuk HTML, CSS, dan JavaScript secara bersamaan
+     
       setTimeout(() => setHtmlProgress(70), 300);
       setTimeout(() => setCssProgress(60), 600);
       setTimeout(() => setJsProgress(40), 900);
@@ -62,7 +61,11 @@ const About = () => {
                   <div className="row">
                     <div className="col-sm-6 col-md-5">
                       <div className="about-img">
-                        <img src={Kia} />
+                        <img
+                          src={about.image || ""}
+                          alt="About"
+                          style={{ width: "100%", height: "auto" }}
+                        />
                       </div>
                     </div>
                     <div className="col-sm-6 col-md-7">
@@ -159,11 +162,9 @@ const About = () => {
                 <div className="col-md-6">
                   <div className="about-me pt-4 pt-md-0">
                     <div className="title-box-2">
-                      <h5 className="title-left">About me</h5>
+                      <h5 className="title-left">{about.title}</h5>
                     </div>
-                    <p className="lead">
-                      {about.desc}
-                    </p>
+                    <p className="lead">{about.desc}</p>
                   </div>
                 </div>
               </div>

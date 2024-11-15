@@ -13,7 +13,7 @@ const Navbar = () => {
   }, []);
   const [activeSection, setActiveSection] = useState("home");
 
-  // Mengamati bagian yang terlihat untuk menetapkan bagian aktif
+
   useEffect(() => {
     const sections = ["home", "about", "service", "work", "contact"];
     const options = { threshold: 0.3 };
@@ -21,7 +21,7 @@ const Navbar = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id); // Update active section saat scroll
+          setActiveSection(entry.target.id); 
         }
       });
     }, options);
@@ -34,12 +34,12 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Fungsi untuk menangani klik navbar dan scroll ke bagian yang sesuai
+
   const handleNavClick = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" }); // Scroll dengan efek smooth
-      setActiveSection(sectionId); // Update active section saat navbar diklik
+      section.scrollIntoView({ behavior: "smooth" }); 
+      setActiveSection(sectionId); 
     }
   };
 

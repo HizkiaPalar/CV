@@ -1,8 +1,15 @@
-import React from "react";
-import Certi3 from "../../../assets/img/certi3.JPG";
-import Certi2 from "../../../assets/img/certi2.jpg";
-import Certi4 from "../../../assets/img/certi4.JPG";
+import React, { useEffect, useState } from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
 const Portfolio = () => {
+  const [portfolio, setPortfolio] = useState({});
+  useEffect(() => {
+    const db = getDatabase();
+    const portfolioRef = ref(db, "portfolio");
+    onValue(portfolioRef, (snapshot) => {
+      const data = snapshot.val();
+      setPortfolio(data);
+    });
+  }, []);
   return (
     <section id="work" className="portfolio-mf sect-pt4 route">
       <div className="container">
@@ -20,15 +27,15 @@ const Portfolio = () => {
             <div className="work-box">
               <a href="img/work-1.jpg" data-lightbox="gallery-mf">
                 <div className="work-img">
-                  <img src={Certi4} alt className="img-fluid" />
+                  <img src={portfolio.image2 || ""} />
                 </div>
                 <div className="work-content">
                   <div className="row">
                     <div className="col-sm-8">
-                      <h2 className="w-title">Web Development Bootcamp</h2>
+                      <h2 className="w-title">{portfolio.skill1}</h2>
                       <div className="w-more">
-                        <span className="w-ctegory">Udemy</span> /{" "}
-                        <span className="w-date">4 Aug. 2024</span>
+                        <span className="w-ctegory">{portfolio.company1}</span>{" "}
+                        / <span className="w-date">{portfolio.date1}</span>
                       </div>
                     </div>
                   </div>
@@ -40,15 +47,15 @@ const Portfolio = () => {
             <div className="work-box">
               <a href="img/work-2.jpg" data-lightbox="gallery-mf">
                 <div className="work-img">
-                  <img src={Certi2} />
+                  <img src={portfolio.image1 || ""} />
                 </div>
                 <div className="work-content">
                   <div className="row">
                     <div className="col-sm-8">
-                      <h2 className="w-title">UI/UX Bootcamp</h2>
+                      <h2 className="w-title">{portfolio.skill2}</h2>
                       <div className="w-more">
-                        <span className="w-ctegory">HabisKerja.com</span> /{" "}
-                        <span className="w-date">4 Aug. 2024</span>
+                        <span className="w-ctegory">{portfolio.company2}</span>{" "}
+                        / <span className="w-date">{portfolio.date2}</span>
                       </div>
                     </div>
                   </div>
@@ -60,15 +67,15 @@ const Portfolio = () => {
             <div className="work-box">
               <a href="img/work-3.jpg" data-lightbox="gallery-mf">
                 <div className="work-img">
-                  <img src={Certi3} alt className="img-fluid" />
+                  <img src={portfolio.image3 || ""} />
                 </div>
                 <div className="work-content">
                   <div className="row">
                     <div className="col-sm-8">
-                      <h2 className="w-title">Mobile App Development</h2>
+                      <h2 className="w-title">{portfolio.skill3}</h2>
                       <div className="w-more">
-                        <span className="w-ctegory">PROXOCORIS</span> /{" "}
-                        <span className="w-date">18 Sep. 2018</span>
+                        <span className="w-ctegory">{portfolio.company3}</span>{" "}
+                        / <span className="w-date">{portfolio.date3}</span>
                       </div>
                     </div>
                   </div>

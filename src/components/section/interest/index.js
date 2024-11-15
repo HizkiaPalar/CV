@@ -1,6 +1,15 @@
-import React from "react";
-
+import React, {useEffect, useState} from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
 const Interest = () => {
+  const [interest, setInterest] = useState({});
+  useEffect(() => {
+    const db = getDatabase();
+    const interestRef = ref(db, "interest");
+    onValue(interestRef, (snapshot) => {
+      const data = snapshot.val();
+      setInterest(data);
+    });
+  }, []);
   return (
     <section id="service" className="services-mf route">
       <div className="container">
@@ -22,14 +31,9 @@ const Interest = () => {
                 </span>
               </div>
               <div className="service-content">
-                <h2 className="s-title">UI/UX Design</h2>
+                <h2 className="s-title">{interest.skill1}</h2>
                 <p className="s-description text-center">
-                  Passionate about UI/UX design, focusing on creating intuitive
-                  and visually appealing user experiences. Skilled in
-                  understanding user needs, analyzing feedback, and translating
-                  insights into effective design solutions. Committed to
-                  enhancing usability and delivering seamless, engaging digital
-                  interfaces.
+                  {interest.desc1}
                 </p>
               </div>
             </div>
@@ -42,14 +46,9 @@ const Interest = () => {
                 </span>
               </div>
               <div className="service-content">
-                <h2 className="s-title">Front-end Development</h2>
+                <h2 className="s-title">{interest.skill2}</h2>
                 <p className="s-description text-center">
-                  Interested in front-end development, focusing on creating
-                  responsive and dynamic user interfaces. Skilled in optimizing
-                  user experience through the use of HTML, CSS, and JavaScript,
-                  with attention to detail in both design and functionality.
-                  Committed to delivering fast, intuitive, and visually
-                  appealing web applications.
+                  {interest.desc2}
                 </p>
               </div>
             </div>
@@ -63,14 +62,9 @@ const Interest = () => {
                 </span>
               </div>
               <div className="service-content">
-                <h2 className="s-title">Mobile app development</h2>
+                <h2 className="s-title">{interest.skill3}</h2>
                 <p className="s-description text-center">
-                  Interested in mobile app development, focusing on creating
-                  user-friendly and high-performance mobile applications.
-                  Skilled in designing intuitive interfaces and optimizing
-                  functionality for mobile platforms, with a strong emphasis on
-                  usability and responsiveness. Committed to delivering
-                  seamless, engaging app experiences that meet user needs.
+                  {interest.desc3}
                 </p>
               </div>
             </div>

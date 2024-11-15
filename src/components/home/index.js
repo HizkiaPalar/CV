@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { getDatabase, ref, onValue } from "firebase/database";
-const Home = ({ backgroundImage }) => {
+
+const Home = () => {
   const [home, setHome] = useState({});
+
   useEffect(() => {
     const db = getDatabase();
     const homeRef = ref(db, "home");
+
     onValue(homeRef, (snapshot) => {
       const data = snapshot.val();
       setHome(data);
     });
   }, []);
+
   return (
     <div
       id="home"
       className="intro route bg-image"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{
+        backgroundImage: `url(${home.image || ""})`, 
+      }}
     >
       <div className="overlay-itro" />
       <div className="intro-content display-table fade-in">
