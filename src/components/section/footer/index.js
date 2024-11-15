@@ -13,6 +13,20 @@ const Footer = () => {
     });
   }, []);
 
+  const socialLinkStyle = {
+    color: "black", // Warna dasar ikon
+    textDecoration: "none", // Hilangkan garis bawah
+    transition: "color 0.3s ease", // Efek transisi warna
+  };
+
+  const socialLinkHoverStyle = {
+    color: "darkgray", // Warna saat hover
+  };
+
+  const iconStyle = {
+    fontSize: "24px", // Ukuran ikon
+  };
+
   return (
     <section
       className="paralax-mf footer-paralax bg-image sect-mt4 route"
@@ -33,7 +47,8 @@ const Footer = () => {
                       <p className="lead">{footer.ty}</p>
                       <ul className="list-ico">
                         <li>
-                          <span className="ion-ios-location" /> {footer.location}
+                          <span className="ion-ios-location" />{" "}
+                          {footer.location}
                         </li>
                         <li>
                           <span className="ion-ios-telephone" /> {footer.phone}
@@ -53,10 +68,19 @@ const Footer = () => {
                             href={footer.ig || "#"}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="social-link"
+                            style={socialLinkStyle}
+                            onMouseEnter={(e) =>
+                              (e.target.style.color = "darkgray")
+                            }
+                            onMouseLeave={(e) =>
+                              (e.target.style.color = "black")
+                            }
                           >
                             <span className="ico-circle">
-                              <i className="ion-social-instagram" />
+                              <i
+                                className="ion-social-instagram"
+                                style={iconStyle}
+                              />
                             </span>
                           </a>
                         </li>
@@ -65,10 +89,19 @@ const Footer = () => {
                             href={footer.linkedin || "#"}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="social-link"
+                            style={socialLinkStyle}
+                            onMouseEnter={(e) =>
+                              (e.target.style.color = "darkgray")
+                            }
+                            onMouseLeave={(e) =>
+                              (e.target.style.color = "black")
+                            }
                           >
                             <span className="ico-circle">
-                              <i className="ion-social-linkedin" />
+                              <i
+                                className="ion-social-linkedin"
+                                style={iconStyle}
+                              />
                             </span>
                           </a>
                         </li>
@@ -77,10 +110,19 @@ const Footer = () => {
                             href={footer.github || "#"}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="social-link"
+                            style={socialLinkStyle}
+                            onMouseEnter={(e) =>
+                              (e.target.style.color = "darkgray")
+                            }
+                            onMouseLeave={(e) =>
+                              (e.target.style.color = "black")
+                            }
                           >
                             <span className="ico-circle">
-                              <i className="ion-social-github" />
+                              <i
+                                className="ion-social-github"
+                                style={iconStyle}
+                              />
                             </span>
                           </a>
                         </li>

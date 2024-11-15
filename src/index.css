@@ -713,7 +713,7 @@ a:hover {
   }
 
   .text-slider-items {
-    font-size: 1.2rem;  /* Adjust font size for smaller screens */
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
   }
 
   .intro-subtitle {
@@ -723,18 +723,17 @@ a:hover {
 
 @media (max-width: 480px) {
   .intro-title {
-    font-size: 1.8rem;  /* Smaller title on small screens */
+    font-size: 1.8rem; /* Smaller title on small screens */
   }
 
   .text-slider-items {
-    font-size: 1rem;  /* Smaller font size for typing text */
+    font-size: 1rem; /* Smaller font size for typing text */
   }
 
   .intro-subtitle {
     font-size: 0.9rem;
   }
 }
-
 
 /*======================================
 //--//-->   ABOUT
@@ -755,7 +754,6 @@ a:hover {
   object-fit: cover; /* Ensures image doesn't stretch */
   border-radius: 5px; /* Optional: adds a rounded edge */
 }
-
 
 .about-mf .about-img img {
   margin-left: 10px;
@@ -36674,18 +36672,4 @@ a.text-dark:hover {
   height: 2px;
   width: 100%;
   background-color: #bd2130; /* Warna underline */
-}
-
-.social-link {
-  color: black; /* Warna dasar hitam */
-  text-decoration: none; /* Hilangkan garis bawah */
-  transition: color 0.3s ease; /* Efek transisi warna */
-}
-
-.social-link:hover {
-  color: darkgray; /* Warna saat hover */
-}
-
-.ico-circle i {
-  font-size: 24px; /* Ukuran ikon */
 }
